@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="executive"] {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+[data-font="minimal"] {
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+[data-font="modern"] {
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+[data-font="space"] {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: #0f172a;
+    background-color: #fafbfc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* ======================================================== */
+/* Responsive Fluid Typography Utilities (clamp-based)     */
+/* ======================================================== */
+@layer utilities {
+  .fluid-h1 {
+    font-size: clamp(1.625rem, 5.5vw + 0.5rem, 3.75rem);
+    line-height: 1.12;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;
+  }
+
+  .fluid-h2 {
+    font-size: clamp(1.25rem, 4vw + 0.4rem, 2.5rem);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;
+  }
+
+  .fluid-h3 {
+    font-size: clamp(1.025rem, 2.8vw + 0.35rem, 1.75rem);
+    line-height: 1.25;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .fluid-h4 {
+    font-size: clamp(0.875rem, 2vw + 0.3rem, 1.35rem);
+    line-height: 1.32;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Mobile responsive scaling utility for all h1-h4 tags (320px-414px) */
+@media (max-width: 639px) {
+  h1:not(#resume-preview-sheet *):not(.no-fluid),
+  .fluid-h1 {
+    font-size: clamp(1.625rem, 6.2vw + 0.25rem, 2.25rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.028em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;
+  }
+
+  h2:not(#resume-preview-sheet *):not(.no-fluid),
+  .fluid-h2 {
+    font-size: clamp(1.25rem, 4.5vw + 0.2rem, 1.75rem) !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.022em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;
+  }
+
+  h3:not(#resume-preview-sheet *):not(.no-fluid),
+  .fluid-h3 {
+    font-size: clamp(1.025rem, 3.2vw + 0.2rem, 1.375rem) !important;
+    line-height: 1.28 !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;
+  }
+
+  h4:not(#resume-preview-sheet *):not(.no-fluid),
+  .fluid-h4 {
+    font-size: clamp(0.875rem, 2.2vw + 0.2rem, 1.125rem) !important;
+    line-height: 1.35 !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Light Mode Luxury Visual Effects */
+.bg-mesh-light {
+  background: 
+    radial-gradient(at 0% 0%, rgba(224, 231, 255, 0.45) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(243, 232, 255, 0.45) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(238, 242, 255, 0.5) 0px, transparent 60%);
+}
+
+.dot-pattern {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* High-End Glassmorphic Cards with Crisp Inner Specular Hairline */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 
+    0 1px 2px 0 rgba(0, 0, 0, 0.02),
+    0 4px 16px -2px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-premium:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 
+    0 2px 4px 0 rgba(0, 0, 0, 0.02),
+    0 16px 36px -4px rgba(79, 70, 229, 0.09),
+    0 6px 12px -2px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+}
+
+.glass-nav-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Typography Gradient Special Text */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #0f172a 20%, #4338ca 70%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shimmer Button Effect */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  25%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-soft {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+/* Custom soft light scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print Styles for Direct Vector ATS PDF Printing */
+@media print {
+  header, footer, nav, button, .shimmer-btn, .fixed, #prepmind-theme-pill {
+    display: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  #resume-preview-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+}

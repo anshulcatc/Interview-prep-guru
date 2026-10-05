@@ -1,0 +1,6 @@
+{
+  "name": "Interview Prep Guru",
+  "description": "AI-Powered Employability Intelligence Platform connecting Candidates, Institutions, and Hiring Teams powered by PrepMind AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
